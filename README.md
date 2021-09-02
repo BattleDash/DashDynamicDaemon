@@ -25,6 +25,15 @@ Server 1 is responsible for telling the nodes what to do, and when, and the node
 
 Servers and running nodes are all stored in MongoDB, which is queried by Network Control for matchmaking and load balancing.
 
+
+## How Server Types are stored
+
+Network Control has a directory containing server binaries, as well as Game Types containing plugins and pre-set server configurations.
+
+Every minute Network Control generates binaries using that data, and stores them in-memory, to be easily distributed to the nodes (this program).
+
+The daemon stores the archives in a cache folder. Every minute the daemon will make a request to Network Control asking for hashes of its archives. If it contains mismatched hashes, we download/update/delete our caches archives as necessary.
+
 ## Join Ticketing
 
 DashDynamicDaemon contains a W.I.P. Join Ticketing system. The structure is as follows:
