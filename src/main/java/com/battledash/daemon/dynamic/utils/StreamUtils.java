@@ -10,7 +10,7 @@ import java.util.function.Consumer;
 public class StreamUtils {
 
     /**
-     * Starts a thread to handle output message from streams.
+     * Starts a thread to handle lines of output from streams.
      *
      * @param source {@link InputStream} to receive data from, to pipe into {@param lineConsumer}.
      * @param lineConsumer The function to process each received line from the stream.
