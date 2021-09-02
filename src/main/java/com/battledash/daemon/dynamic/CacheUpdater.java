@@ -82,7 +82,7 @@ public class CacheUpdater {
      *
      * @throws InterruptedException if the request to Network Control fails.
      * @throws IOException if an I/O error occurs in deleting or reading from archives.
-     * @throws NoSuchAlgorithmException If the SHA-256 algorithm cannot be found, which should be impossible.
+     * @throws NoSuchAlgorithmException if the SHA-256 algorithm cannot be found, which should be impossible.
      */
     public void update() throws InterruptedException, IOException, NoSuchAlgorithmException  {
         HttpResponse<String> send = HTTPClient.client.send(HttpRequest.newBuilder()
