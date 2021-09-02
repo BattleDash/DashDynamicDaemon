@@ -28,7 +28,7 @@ public class MiniServer extends Server {
         log.info("Starting new MiniServer as {}", this);
         while (DaemonNode.getInstance().getCacheUpdater().getLockedGametypes().contains(this.getTypeId())) {
             // Blocks the thread until the archive is done downloading
-            // TODO: 7/16/2021 Find a better solution for this, java synchronization is confusing
+            // TODO: 7/16/2021 Find a better solution for this, java synchronization (Object#wait/notify) wasn't working quite right, so this works as a temporary solution
         }
         this.getDirectory().mkdirs();
         try {
