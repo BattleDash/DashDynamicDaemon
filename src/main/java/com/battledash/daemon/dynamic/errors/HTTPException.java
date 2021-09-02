@@ -14,4 +14,14 @@ public abstract class HTTPException extends RuntimeException {
     public HTTPException(String reason) {
         this.errorMessage = reason;
     }
+    
+    @Override
+    public String toString() {
+        return errorMessage;
+    }
+
+    @Override
+    public String getMessage() {
+        return errorMessage;
+    }
 }
