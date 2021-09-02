@@ -34,8 +34,7 @@ public class Env {
     public static Boolean DEBUG;
 
     static {
-        Dotenv dotenv = Dotenv.load();
-        for (DotenvEntry entry : dotenv.entries()) {
+        for (DotenvEntry entry : Dotenv.load()) {
             try {
                 Field declaredField = Env.class.getDeclaredField(entry.getKey());
                 declaredField.setAccessible(true);
