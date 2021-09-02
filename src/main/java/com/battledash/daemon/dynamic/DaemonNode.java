@@ -31,11 +31,8 @@ import java.util.stream.Collectors;
 @ApplicationPath("/")
 @Getter
 public class DaemonNode extends ResourceConfig {
-    @Getter
     private static DaemonNode instance;
-    @Getter
     private final CacheUpdater cacheUpdater;
-    @Getter
     private final Database database;
 
     public DaemonNode() throws IOException {
