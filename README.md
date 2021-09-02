@@ -32,7 +32,7 @@ Network Control has a directory containing server binaries, as well as Game Type
 
 Every minute Network Control generates binaries using that data, and stores them in-memory, to be easily distributed to the daemon nodes (this program).
 
-The daemon stores the archives in a cache folder. Every minute the daemon will make a request to Network Control asking for hashes of its archives. If it contains mismatched hashes, we download/update/delete our caches archives as necessary.
+The daemon stores the archives in a cache folder. Every minute the daemon will make a request to Network Control asking for hashes of its archives. If it contains mismatched hashes, we download/update/delete our cached archives as necessary.
 
 ## Join Ticketing
 
