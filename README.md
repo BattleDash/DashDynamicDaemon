@@ -10,7 +10,7 @@
 
 ## Purpose
 
-This system was originally created to host automatically scalable Minigame and Lobby servers for the [Enlighten](https://enlightenmc.net) Minecaft Network.
+This system was originally created to host automatically scalable Minigame and Lobby servers for the [Enlighten](https://enlightenmc.net) Minecraft Network.
 It relies on certain proprietary Network Control systems and a plugin that connects to the daemon's socket, so if you want to actually use this you will need to recreate those yourself.
 
 I'm putting a modified version of this on GitHub as an example of my recent work, but you are completely free to use this yourself as well.
