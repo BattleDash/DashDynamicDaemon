@@ -26,7 +26,7 @@ public class Launcher {
      *
      * @param args Parameters to the daemon.
      *
-     * @throws IOException In the initialization of {@link DaemonNode}, for {@link org.apache.commons.io.FileUtils#deleteDirectory}
+     * @throws IOException if {@link org.apache.commons.io.FileUtils#deleteDirectory} fails in {@link DaemonNode} initialization.
      */
     public static void main(String[] args) throws IOException {
         Logger log = LogManager.getLogger(Launcher.class);
