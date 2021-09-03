@@ -18,6 +18,11 @@ import org.slf4j.LoggerFactory;
 
 import java.time.Instant;
 
+/**
+ * WebSocket server that is connected to from
+ * game servers to transmit metadata, state, and
+ * join tickets. Created by {@link DaemonNodeSocket#createSocket}.
+ */
 public class DaemonServerWebSocket extends DefaultWebSocket {
     private static final Logger log = LoggerFactory.getLogger(DaemonServerWebSocket.class);
 
@@ -30,6 +35,11 @@ public class DaemonServerWebSocket extends DefaultWebSocket {
     @Getter
     private Server server;
 
+    /**
+     * Handles open connection to the socket instance.
+     * Tries to identify the server based on connection parameters,
+     * and sends server metadata like map names and node instances.
+     */
     @SneakyThrows
     @Override
     public void onConnect() {
