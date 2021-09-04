@@ -21,7 +21,7 @@ import java.time.Instant;
 /**
  * WebSocket server that is connected to from
  * game servers to transmit metadata, state, and
- * join tickets. Created by {@link DaemonNodeSocket#createSocket}.
+ * join tickets. Created by {@link DaemonNodeSocket#createSocket(ProtocolHandler, HttpRequestPacket, WebSocketListener...)}.
  */
 public class DaemonServerWebSocket extends DefaultWebSocket {
     private static final Logger log = LoggerFactory.getLogger(DaemonServerWebSocket.class);
