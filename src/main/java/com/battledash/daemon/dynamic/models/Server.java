@@ -27,6 +27,12 @@ import java.util.*;
 import java.util.function.Consumer;
 import java.util.regex.Pattern;
 
+/**
+ * Main Server class, which represents
+ * a running Minecraft Game Server.
+ *
+ * Implemented by {@link MiniServer}.
+ */
 @Data
 public abstract class Server {
     private static final Logger log = LoggerFactory.getLogger(Server.class);
@@ -118,6 +124,7 @@ public abstract class Server {
 
     /**
      * Handle game server errors
+     *
      * @param line Line of output from game server
      */
     public void handleErrorLine(String line) {
