@@ -23,7 +23,7 @@ Server 1 is running Network Control, and the other 3 are running Dynamic Daemon 
 
 Server 1 is responsible for telling the nodes what to do, and when, and the nodes are responsible for creating and keeping track of the game servers themselves.
 
-Servers and running nodes are all stored in MongoDB, which is queried by Network Control for matchmaking and load balancing.
+Running nodes and their game servers are all stored in MongoDB, which is queried by Network Control for matchmaking and load balancing.
 
 
 ## How Server Types are stored
