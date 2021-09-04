@@ -31,7 +31,9 @@ import java.util.stream.Collectors;
 @ApplicationPath("/")
 @Getter
 public class DaemonNode extends ResourceConfig {
+    @Getter // Static fields need to be explicitly annotated
     private static DaemonNode instance;
+
     private final CacheUpdater cacheUpdater;
     private final Database database;
 
