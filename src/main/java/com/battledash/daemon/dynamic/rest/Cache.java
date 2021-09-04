@@ -15,7 +15,6 @@ import java.security.NoSuchAlgorithmException;
 
 @Path("/cache")
 public class Cache {
-    private static final Logger log = LoggerFactory.getLogger(Cache.class);
 
     @POST
     @Path("/update")

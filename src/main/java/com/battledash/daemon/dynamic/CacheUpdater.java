@@ -60,7 +60,7 @@ public class CacheUpdater {
         log.info("Downloading archive for {}", gameType);
         File file = Paths.get(archives.getAbsolutePath(), gameType + ".tar.gz").toFile();
         try (FileOutputStream out = new FileOutputStream(file)) {
-            HTTPClient.client.sendAsync(HttpRequest.newBuilder()
+            HTTPClient.CLIENT.sendAsync(HttpRequest.newBuilder()
                     .uri(URI.create("https://" + Env.NCP_HOST + ":" + Env.NCP_PORT + "/daemon/dynamic/servers/" + gameType + "/serverArchive"))
                     .setHeader("Authorization", Env.NCP_SECRET)
                     .GET()
@@ -85,7 +85,7 @@ public class CacheUpdater {
      * @throws NoSuchAlgorithmException if the SHA-256 algorithm cannot be found, which should be impossible.
      */
     public void update() throws InterruptedException, IOException, NoSuchAlgorithmException  {
-        HttpResponse<String> send = HTTPClient.client.send(HttpRequest.newBuilder()
+        HttpResponse<String> send = HTTPClient.CLIENT.send(HttpRequest.newBuilder()
                 .uri(URI.create("https://" + Env.NCP_HOST + ":" + Env.NCP_PORT + "/daemon/dynamic/servers/cachedHashes"))
                 .setHeader("Authorization", Env.NCP_SECRET)
                 .GET()
