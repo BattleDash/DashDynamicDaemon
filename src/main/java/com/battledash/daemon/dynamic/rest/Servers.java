@@ -1,5 +1,6 @@
 package com.battledash.daemon.dynamic.rest;
 
+import com.battledash.daemon.dynamic.errors.BadRequestException;
 import com.battledash.daemon.dynamic.models.MiniServer;
 import com.battledash.daemon.dynamic.models.Server;
 import com.battledash.daemon.dynamic.utils.ServerUtils;
@@ -49,10 +50,12 @@ public class Servers {
     @Path("/servers/{id}/ws/custom")
     @Produces(MediaType.APPLICATION_JSON)
     @ManagedAsync
-    public APIResponse<Server> sendCustomPayload(@Context ContainerRequestContext data, @PathParam("id") String id, String body) {
+    public APIResponse<Void> sendCustomPayload(@Context ContainerRequestContext data, @PathParam("id") String id, String body) {
         Server server = Server.getById(id);
         if (server == null) throw new NotFoundException("Server not found.");
-        return new APIResponse<>(true, server);
+        if (server.getWs() == null || !server.getWs().isConnected()) throw new BadRequestException("Server socket not open.");
+        server.getWs().sendData("CUSTOM_PAYLOAD", new JSONObject(body).getString("message"));
+        return new APIResponse<>(true);
     }
 
     @POST
