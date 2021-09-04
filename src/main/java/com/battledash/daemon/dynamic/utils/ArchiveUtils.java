@@ -44,17 +44,4 @@ public class ArchiveUtils {
         tis.close();
     }
 
-    /**
-     * Gets the tar file name from the gz file
-     * by removing the .gz part from the input file
-     *
-     * @param inputFile The input file name
-     * @param outputFolder The output folder
-     *
-     * @return The fixed file name
-     */
-    private static String getFileName(File inputFile, String outputFolder) {
-        return outputFolder + File.separator + inputFile.getName().substring(0, inputFile.getName().lastIndexOf('.'));
-    }
-
 }
